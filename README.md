@@ -91,4 +91,4 @@ License](LICENSE), except for the third-party inputs listed above.
 ## Citation
 
 If you use this code or data, please cite the paper (full citation to be added
-on publication).
+on publication). For citing this repository specifically, see [CITATION.cff](CITATION.cff).
