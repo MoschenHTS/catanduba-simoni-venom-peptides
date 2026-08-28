@@ -1,0 +1,5 @@
+ID,Alias,Sequence,Length,Mass_Da_MH+,Notes
+Cs32.1,,GCRWMFGACKTTADCCKALACVGTCIWDGS,30,3150.23,Not carried forward past purification; not structurally modeled
+CsTx1,,GCRWMFGACKTTADCCKALACVGTCIWDG,29,3313.36,C-terminus (~223 Da) unresolved by Edman/MALDI-ISD/PSD; sequence shown is the resolved N-terminal core only; excluded from structural modeling
+CsTx2,,GCRWMFGACKTTADCCKALACVGTCIWDGTYG,32,3385.70,Fully sequenced
+CsTx3,,GCRWMFGACKTTADCCKALACVGTCIWDGTYGN,33,3499.90,Fully sequenced

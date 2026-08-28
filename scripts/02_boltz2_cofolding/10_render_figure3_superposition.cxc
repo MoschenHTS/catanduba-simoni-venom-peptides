@@ -1,0 +1,69 @@
+# Step 3 — Figure 3: CsTx2/CsTx3 (Boltz-2 models) superposed onto the solved
+# NMR structure of SGTx1 (PDB 1LA4), the closest solved homolog (67.7%
+# identity to CsTx3; TM-align 0.683 to both CsTx2 and CsTx3).
+#
+# ICK disulfide connectivity for CsTx2/CsTx3 is 2-16, 9-21, 15-25.
+#
+# Run from the repository root:
+#   chimerax scripts/02_boltz2_cofolding/10_render_figure3_superposition.cxc
+
+# Start from a clean slate so model numbers (#1/#2/#3) are predictable
+# regardless of what ran earlier in this ChimeraX session.
+close all
+
+set bgColor white
+lighting soft
+graphics silhouettes true
+
+# ---------- open structures ----------
+open "inputs/reference_structures/1LA4.pdb"
+# keep only NMR model 1 of SGTx1
+delete #1.2-20
+open "generated/predictions/CsTx2/CsTx2_model_0.pdb"
+open "generated/predictions/CsTx3/CsTx3_model_0.pdb"
+
+# ---------- superpose CsTx2, CsTx3 onto SGTx1 (structure-guided) ----------
+matchmaker #2 to #1
+matchmaker #3 to #1
+
+# Colours: CsTx2 = #2a78d6, CsTx3 = #eb6834 (consistent across all figures)
+cartoon
+color #1 gray
+color #2 #2a78d6
+color #3 #eb6834
+
+# ---------- ICK disulfides, connectivity 2-16, 9-21, 15-25 ----------
+bond #2/A:2@SG #2/A:16@SG
+bond #2/A:9@SG #2/A:21@SG
+bond #2/A:15@SG #2/A:25@SG
+bond #3/A:2@SG #3/A:16@SG
+bond #3/A:9@SG #3/A:21@SG
+bond #3/A:15@SG #3/A:25@SG
+style #2/A:2,9,15,16,21,25 stick
+style #3/A:2,9,15,16,21,25 stick
+color #2/A:2,9,15,16,21,25 yellow
+color #3/A:2,9,15,16,21,25 yellow
+
+# ---------- retained cationic anchor: R3, all three chains ----------
+select #1/A:3 #2/A:3 #3/A:3
+style sel stick
+color sel orange
+select clear
+
+# ---------- lost cluster: SGTx1 R22 + K26, CsTx V22 (substituted) ----------
+select #1/A:22,26
+style sel stick
+color sel red
+select clear
+select #2/A:22 #3/A:22
+style sel stick
+color sel forest
+select clear
+
+view
+turn y 25
+turn x -15
+
+# 4200x3150 px at supersample 3 clears standard journal bitmap-figure minimums.
+save "generated/figures/Figure3_sgtx1_superposition.png" width 4200 height 3150 supersample 3
+save "generated/figures/Figure3_sgtx1_superposition.tiff" width 4200 height 3150 supersample 3

@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local outputs from running scripts/ against the primary data (not shipped in
+# this repository - see README). Never intended to be committed.
+generated/

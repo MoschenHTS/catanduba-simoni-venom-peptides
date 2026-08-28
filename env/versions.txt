@@ -1,0 +1,32 @@
+# Key tool versions, captured from the running environments (primary compute
+# workstation, RTX 4080 GPU).
+# Full pinned dependency lists: env/{boltz,gmx,mmpbsa}.yml
+
+boltz:
+  2.2.1
+torch:
+  2.5.1+cu121 | CUDA 12.1
+gromacs:
+  GROMACS version:     2026.0-conda_forge
+gmx_MMPBSA:
+  [INFO   ] Starting gmx_MMPBSA 1.6.5
+    gmx_MMPBSA --version
+  gmx_MMPBSA 1.6.5 based on MMPBSA version 16.0 and AmberTools 20
+ambertools (sander):
+  sander: Version 24.0
+
+# Plotting/statistics stack, captured on a SEPARATE machine (macOS, not the
+# workstation above) while regenerating the results/*.csv tables and figures for
+# a verification pass. The env/{boltz,gmx,mmpbsa}.yml pins above disagree with
+# each other on matplotlib (3.11.0 / 3.10.9 / 3.7.3) and none is confirmed as
+# what actually produced the originally committed figures — these are the
+# versions used for that verification re-render only, recorded so a future
+# re-render can be checked against them.
+matplotlib:
+  3.10.9
+numpy:
+  2.2.6
+scipy:
+  1.15.3
+statsmodels:
+  0.14.6

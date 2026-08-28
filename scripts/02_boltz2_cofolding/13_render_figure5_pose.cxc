@@ -1,0 +1,33 @@
+# Step 5a — Figure 5 panel A: representative CsTx2-Kv4.2 pose (best
+# between-seed convergence, 72 +/- 4%), the post-co-folding structure
+# selected by the pose-convergence criterion in scripts/02_boltz2_cofolding/.
+# Colours match Figures 3/4: CsTx2 = #2a78d6. VSD: wheat / S4-paddle firebrick.
+#
+# Run from the repository root:
+#   chimerax scripts/02_boltz2_cofolding/13_render_figure5_pose.cxc
+
+close all
+
+set bgColor white
+lighting soft
+graphics silhouettes true
+
+open "generated/structures/CsTx2_Kv42_postMD.pdb"
+cartoon
+color #1/A #2a78d6
+color #1/B wheat
+
+# Co-folding pharmacophore residues (R3, W4, M5, F6, W27)
+select #1/A:3,4,5,6,27
+style sel stick
+color sel orange
+select clear
+
+# VSD S4/paddle gating-charge region (Kv4.2 local residues 100-123)
+select #1/B:100-123
+color sel firebrick
+select clear
+
+view
+turn y 20
+save "generated/figures/Figure5_panelA_pose.png" width 4200 height 3360 supersample 3

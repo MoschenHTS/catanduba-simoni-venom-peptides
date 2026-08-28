@@ -1,0 +1,55 @@
+# Step 4a — Figure 4 source panels: Boltz-2 monomer models of CsTx2 and CsTx3.
+# Cs32.1 and CsTx1 are not modeled (Cs32.1 was not carried past purification;
+# CsTx1's C-terminus was never resolved by Edman/MALDI sequencing).
+#
+# Three panels, composited by 12_composite_figure4_monomers.py:
+#   A = CsTx2 (individual)   B = CsTx3 (individual)   C = superposition
+# ICK disulfide connectivity: 2-16, 9-21, 15-25.
+# Colours: CsTx2 = #2a78d6, CsTx3 = #eb6834 (consistent across all figures).
+#
+# Run from the repository root:
+#   chimerax scripts/02_boltz2_cofolding/11_render_figure4_monomers.cxc
+
+close all
+
+set bgColor white
+lighting soft
+graphics silhouettes true
+
+# ---------- Panel A: CsTx2 individual ----------
+open "generated/predictions/CsTx2/CsTx2_model_0.pdb"
+cartoon
+color #1 #2a78d6
+bond #1/A:2@SG #1/A:16@SG
+bond #1/A:9@SG #1/A:21@SG
+bond #1/A:15@SG #1/A:25@SG
+style #1/A:2,9,15,16,21,25 stick
+color #1/A:2,9,15,16,21,25 yellow
+view
+save "generated/figures/Figure4_panelA_CsTx2.png" width 2800 height 2450 supersample 3
+close all
+
+# ---------- Panel B: CsTx3 individual ----------
+open "generated/predictions/CsTx3/CsTx3_model_0.pdb"
+cartoon
+color #1 #eb6834
+bond #1/A:2@SG #1/A:16@SG
+bond #1/A:9@SG #1/A:21@SG
+bond #1/A:15@SG #1/A:25@SG
+style #1/A:2,9,15,16,21,25 stick
+color #1/A:2,9,15,16,21,25 yellow
+view
+save "generated/figures/Figure4_panelB_CsTx3.png" width 2800 height 2450 supersample 3
+close all
+
+# ---------- Panel C: superposition, CsTx2 solid / CsTx3 transparent ----------
+open "generated/predictions/CsTx2/CsTx2_model_0.pdb"
+open "generated/predictions/CsTx3/CsTx3_model_0.pdb"
+matchmaker #2 to #1
+cartoon
+color #1 #2a78d6
+color #2 #eb6834
+transparency #2 60 cartoons
+view
+save "generated/figures/Figure4_panelC_superposition.png" width 2800 height 2450 supersample 3
+close all

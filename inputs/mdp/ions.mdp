@@ -1,0 +1,15 @@
+integrator = steep
+nsteps = 0
+cutoff-scheme = Verlet
+nstlist = 20
+rlist = 1.2
+coulombtype = pme
+rcoulomb = 1.2
+vdwtype = cut-off
+vdw-modifier = force-switch
+rvdw-switch = 1.0
+rvdw = 1.2
+constraint_algorithm = lincs
+lincs-iter = 1
+lincs-order = 4
+constraints = none

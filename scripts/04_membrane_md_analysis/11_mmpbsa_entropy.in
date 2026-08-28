@@ -1,0 +1,10 @@
+Production GB-MMPBSA + entropy correction (IE + C2), last 50ns, 200 frames
+&general
+startframe=1, endframe=1000, interval=5,
+verbose=1,
+forcefields="leaprc.protein.ff14SB",
+interaction_entropy=1, c2_entropy=1, ie_segment=25,
+/
+&gb
+igb=5, saltcon=0.150,
+/

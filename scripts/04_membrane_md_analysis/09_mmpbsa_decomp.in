@@ -1,0 +1,12 @@
+Per-residue decomposition, last 50ns, 100 frames
+&general
+startframe=1, endframe=1000, interval=10,
+verbose=1,
+forcefields="leaprc.protein.ff14SB"
+/
+&gb
+igb=5, saltcon=0.150,
+/
+&decomp
+idecomp=1, dec_verbose=1, print_res="within 6", csv_format=1,
+/

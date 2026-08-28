@@ -1,0 +1,78 @@
+================================================================================
+INTERFACE PHARMACOPHORE OCCUPANCY - contact frequency across the 50-model ensemble
+Produced by: scripts/02_boltz2_cofolding/09_analyze_interface.py
+================================================================================
+Pharmacophore = cationic (R/K/H) + hydrophobic (W/F/Y/M/L/I/V) toxin residues that
+bury at the interface, computed identically for the CsTx complexes and for the two
+validated references: SGTx1 (closest solved homolog) and ProTx-II (6N4I benchmark).
+
+-------------------------------- CsTx COMPLEXES -------------------------------
+
+## CsTx2-Kv4.2  (n=50 models)
+  peptide interface (residue: % of models):
+    F6:100%  R3:100%  G7:100%  W4:100%  M5:98%  W27:86%  C2:84%  G32:76%  G1:74%  L19:70%  Y31:64%  A18:54%  K17:42%
+  VSD interface (residue: %; * = S4/paddle):
+    P24:96%  R109*:96%  T22:96%  V113*:96%  V110*:96%  V106*:92%  P36:88%  N18:82%  T107*:80%  G103*:78%  V19:76%  E34:66%  F105*:62%  S102*:58%  E39:48%  V23:42%  K33:36%  A104*:34%
+  --> S4/paddle engaged in 48/50 models (96% of ensemble)
+  pharmacophore | cationic: R3:100% K17:42%
+                | hydrophobic: F6:100% W4:100% M5:98% W27:86% L19:70% Y31:64%
+
+## CsTx2-Kv4.3  (n=50 models)
+  peptide interface (residue: % of models):
+    F6:96%  M5:88%  R3:88%  W4:88%  G7:86%  C2:72%  W27:70%  G1:66%  L19:58%  K17:52%  A18:52%  Y31:50%  G32:50%  A8:46%  T24:32%
+  VSD interface (residue: %; * = S4/paddle):
+    T22:82%  V109*:82%  R108*:82%  T106*:80%  V112*:78%  P24:76%  V105*:74%  P35:72%  N18:60%  V19:60%  E33:58%  F104*:58%  G102*:58%  E38:52%  K32:32%  V23:32%  I115*:30%
+  --> S4/paddle engaged in 41/50 models (82% of ensemble)
+  pharmacophore | cationic: R3:88% K17:52%
+                | hydrophobic: F6:96% M5:88% W4:88% W27:70% L19:58% Y31:50%
+
+## CsTx3-Kv4.2  (n=50 models)
+  peptide interface (residue: % of models):
+    M5:100%  F6:100%  R3:98%  G7:98%  W4:98%  Y31:96%  W27:96%  C2:84%  L19:72%  G1:66%  A18:64%  K17:58%  G32:50%  N33:44%
+  VSD interface (residue: %; * = S4/paddle):
+    R109*:92%  P24:90%  T22:90%  V113*:90%  V106*:90%  V110*:90%  T107*:88%  G103*:86%  P36:78%  N18:76%  F105*:74%  E34:58%  V19:58%  A104*:56%  S102*:56%  V101*:52%  E39:48%  V23:44%  K33:42%
+  --> S4/paddle engaged in 46/50 models (92% of ensemble)
+  pharmacophore | cationic: R3:98% K17:58%
+                | hydrophobic: M5:100% F6:100% W4:98% Y31:96% W27:96% L19:72%
+
+## CsTx3-Kv4.3  (n=50 models)
+  peptide interface (residue: % of models):
+    F6:100%  R3:100%  G7:100%  M5:98%  C2:96%  W4:96%  Y31:90%  W27:90%  G1:88%  L19:76%  A18:72%  K17:64%  N33:44%  G32:42%
+  VSD interface (residue: %; * = S4/paddle):
+    T22:92%  V109*:92%  V105*:92%  V112*:92%  R108*:92%  P24:90%  P35:90%  T106*:86%  G102*:84%  E33:82%  F104*:76%  A103*:68%  E38:60%  K32:52%  N18:48%  V19:48%  L34:46%  D99:42%  S101*:40%
+  --> S4/paddle engaged in 46/50 models (92% of ensemble)
+  persistent salt bridges (>=20% of models):
+    Arg3 -- Glu33  [toxin(+)/VSD(-)]  24%
+  pharmacophore | cationic: R3:100% K17:64%
+                | hydrophobic: F6:100% M5:98% W4:96% Y31:90% W27:90% L19:76%
+
+---------------------------- REFERENCE GATING MODIFIERS -----------------------
+
+## SGTx1-Kv4.2  (n=50 models)
+  peptide interface (residue: % of models):
+    F6:100%  L5:98%  G7:96%  W30:94%  G8:82%  Y4:70%  Y27:62%  R3:62%  K26:58%  R22:54%  A29:52%  G25:50%  D24:48%  L19:44%  K17:44%  H18:42%  T1:40%  C16:38%  C2:30%
+  VSD interface (residue: %; * = S4/paddle):
+    R109*:92%  V106*:86%  E39:82%  N18:78%  T22:78%  V110*:78%  P24:72%  P36:72%  V113*:70%  V19:68%  V23:58%  R112*:54%  E34:52%  S102*:50%  K33:50%  F105*:48%  T107*:46%  L35:46%  E21:38%  G103*:32%
+  --> S4/paddle engaged in 46/50 models (92% of ensemble)
+  pharmacophore | cationic: R3:62% K26:58% R22:54% K17:44% H18:42%
+                | hydrophobic: F6:100% L5:98% W30:94% Y4:70% Y27:62% L19:44%
+
+## ProTx2-Nav1.7_VSD2  (n=50 models, 6N4I benchmark)
+  peptide interface (residue: % of models):
+    K26:100%  K27:100%  M6:100%  W24:100%  W5:100%  R22:100%  L23:100%  L29:100%  K28:86%  V20:84%
+  VSD interface (residue: % of models):
+    V97:100%  I48:100%  F93:100%  N44:100%  L51:100%  D96:100%  E91:100%  A95:100%  L92:100%  A47:100%  L94:100%  E98:92%  L100:56%
+  persistent salt bridges (>=20% of models):
+    Lys26 -- Glu91  [toxin(+)/VSD(-)]  100%
+    Arg22 -- Asp96  [toxin(+)/VSD(-)]  80%
+    Arg22 -- Glu98  [toxin(+)/VSD(-)]  72%
+  pharmacophore | cationic: K26:100% K27:100% R22:100% K28:86%
+                | hydrophobic: M6:100% W24:100% W5:100% L23:100% L29:100% V20:84%
+
+--------------------------------------------------------------------------------
+READING IT: CsTx2/CsTx3 engage the Kv4 paddle through a cationic+hydrophobic
+pharmacophore dominated by the hydrophobic face (R3 + W4/M5/F6/W27), unlike
+ProTx-II's cationic-cluster-dominated interface. SGTx1's supplementary cationic
+cluster (R22, K26) is not conserved in CsTx2/CsTx3 - only R3 and K17 remain -
+consistent with the R22->V22 substitution and the C-terminal deletion that
+removes the Lys26-equivalent position.
