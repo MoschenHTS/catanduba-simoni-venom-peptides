@@ -7,4 +7,10 @@ authors:
     family-names: "Moschen"
 license: MIT
 repository-code: "https://github.com/MoschenHTS/catanduba-simoni-venom-peptides"
+version: "1.0.0"
 date-released: "2026-08-28"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22139140"
+    description: "Zenodo archive of version 1.0.0"
+doi: "10.5281/zenodo.22139140"
