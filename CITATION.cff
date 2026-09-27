@@ -5,6 +5,10 @@ type: software
 authors:
   - given-names: "Henrique Tamanini Silva"
     family-names: "Moschen"
+    orcid: "https://orcid.org/0000-0002-1920-8915"
+    email: "henriquetamanini@icloud.com"
+    affiliation: "Toxinology Laboratory, Center for Molecular Biotechnology, University of Brasília (UnB), Brasília, DF, Brazil"
+    website: "https://www.webofscience.com/wos/author/rid/RDO-7366-2026"
 license: MIT
 repository-code: "https://github.com/MoschenHTS/catanduba-simoni-venom-peptides"
 version: "1.0.0"
